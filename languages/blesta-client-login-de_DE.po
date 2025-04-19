@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Blesta Client Login 1.0\n"
+"Language: de_DE\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+
+msgid "Billing Panel"
+msgstr "Abrechnungsbereich"
+
+msgid "Blesta Login Settings"
+msgstr "Blesta-Login-Einstellungen"
+
+msgid "Settings saved."
+msgstr "Einstellungen gespeichert."
+
+msgid "Shared Login Key"
+msgstr "Gemeinsamer Login-Schlüssel"
+
+msgid "The shared key used to generate the HMAC-SHA256 hash for authentication. The key is hidden by default and will be visible only when focused."
+msgstr "Der gemeinsame Schlüssel, der zur Generierung des HMAC-SHA256-Hashes für die Authentifizierung verwendet wird. Der Schlüssel ist standardmäßig ausgeblendet und wird nur sichtbar, wenn er fokussiert ist."
+
+msgid "You can find the key in Blesta under <strong>[Settings] > [Company] > [Plugins] > [Shared Login]</strong>."
+msgstr "Sie finden den Schlüssel in Blesta unter <strong>[Einstellungen] > [Firma] > [Plugins] > [Gemeinsamer Login]</strong>."
+
+msgid "Redirect URL"
+msgstr "Weiterleitungs-URL"
+
+msgid "The URI to redirect the client to after logging in. If not set, the user will be redirected to the Blesta client interface."
+msgstr "Die URI, zu der der Kunde nach dem Login weitergeleitet wird. Wenn nicht festgelegt, wird der Benutzer zur Blesta-Kundenschnittstelle weitergeleitet."
+
+msgid "Login URL"
+msgstr "Login-URL"
+
+msgid "The full URL to the Blesta shared login endpoint (e.g., \"https://yourdomain.com/path_to_blesta/plugin/shared_login/\")."
+msgstr "Die vollständige URL zum Blesta-Endpunkt für den gemeinsamen Login (z. B. \"https://yourdomain.com/path_to_blesta/plugin/shared_login/\")."
+
+msgid "User Identifier"
+msgstr "Benutzerkennung"
+
+msgid "Select whether to use the WordPress user's email or username as the identifier for Blesta login."
+msgstr "Wählen Sie, ob die E-Mail-Adresse oder der Benutzername des WordPress-Benutzers als Kennung für den Blesta-Login verwendet werden soll."
+
+msgid "Email"
+msgstr "E-Mail"
+
+msgid "Username"
+msgstr "Benutzername"
+
+msgid "Restrict to User Group"
+msgstr "Auf Benutzergruppe beschränken"
+
+msgid "No Restriction"
+msgstr "Keine Einschränkung"
+
+msgid "Select a user role (e.g., \"Administrator\", \"Editor\") to restrict access to the plugin. Leave blank for no restriction."
+msgstr "Wählen Sie eine Benutzerrolle (z. B. \"Administrator\", \"Editor\"), um den Zugriff auf das Plugin zu beschränken. Lassen Sie das Feld leer, um keine Einschränkung festzulegen."
+
+msgid "How to Use the Shortcodes"
+msgstr "So verwenden Sie die Shortcodes"
+
+msgid "To display a \"Billing Panel\" button on your WordPress site, use the following shortcode:"
+msgstr "Um eine Schaltfläche \"Abrechnungsbereich\" auf Ihrer WordPress-Seite anzuzeigen, verwenden Sie den folgenden Shortcode:"
+
+msgid "This shortcode will generate a button that redirects logged-in users to the Billing Panel."
+msgstr "Dieser Shortcode generiert eine Schaltfläche, die eingeloggte Benutzer zum Abrechnungsbereich weiterleitet."
+
+msgid "To get the raw URL for the Billing Panel, use the following shortcode:"
+msgstr "Um die rohe URL für den Abrechnungsbereich zu erhalten, verwenden Sie den folgenden Shortcode:"
+
+msgid "This shortcode will return the raw URL for the Billing Panel, which can be used in custom implementations."
+msgstr "Dieser Shortcode gibt die rohe URL für den Abrechnungsbereich zurück, die in benutzerdefinierten Implementierungen verwendet werden kann."
+
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Sie haben nicht die erforderlichen Berechtigungen, um auf diese Seite zuzugreifen."
+
+msgid "Click the button below to access the Billing Panel."
+msgstr "Klicken Sie auf die Schaltfläche unten, um auf den Abrechnungsbereich zuzugreifen."
+
+msgid "You must be logged in to access the Billing Panel."
+msgstr "Sie müssen eingeloggt sein, um auf den Abrechnungsbereich zuzugreifen."

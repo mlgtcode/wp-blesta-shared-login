@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: it_IT\n"
+
+msgid "Billing Panel"
+msgstr "Pannello di Fatturazione"
+
+msgid "Blesta Login Settings"
+msgstr "Impostazioni di Accesso Blesta"
+
+msgid "Shared Login Key"
+msgstr "Chiave di Accesso Condivisa"
+
+msgid "Redirect URL"
+msgstr "URL di Reindirizzamento"
+
+msgid "Login URL"
+msgstr "URL di Accesso"
+
+msgid "User Identifier"
+msgstr "Identificatore Utente"
+
+msgid "Restrict to User Group"
+msgstr "Limita al Gruppo Utenti"
+
+msgid "Settings saved."
+msgstr "Impostazioni salvate."
+
+msgid "You must be logged in to access the Billing Panel."
+msgstr "Devi essere loggato per accedere al Pannello di Fatturazione."
+
+msgid "Click the button below to access the Billing Panel."
+msgstr "Clicca il pulsante qui sotto per accedere al Pannello di Fatturazione."
+
+msgid "To display a \"Billing Panel\" button on your WordPress site, use the following shortcode:"
+msgstr "Per visualizzare un pulsante \"Pannello di Fatturazione\" sul tuo sito WordPress, usa il seguente shortcode:"
+
+msgid "This shortcode will generate a button that redirects logged-in users to the Billing Panel."
+msgstr "Questo shortcode genererà un pulsante che reindirizza gli utenti loggati al Pannello di Fatturazione."
+
+msgid "To get the raw URL for the Billing Panel, use the following shortcode:"
+msgstr "Per ottenere l'URL grezzo per il Pannello di Fatturazione, usa il seguente shortcode:"
+
+msgid "This shortcode will return the raw URL for the Billing Panel, which can be used in custom implementations."
+msgstr "Questo shortcode restituirà l'URL grezzo per il Pannello di Fatturazione, che può essere utilizzato in implementazioni personalizzate."
