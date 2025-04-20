@@ -42,6 +42,16 @@ add_action('admin_menu', function () {
     );
 });
 
+function encrypt_blesta_secret($key) {
+    $encryption_key = wp_salt('auth'); // Use WordPress salt for encryption
+    return base64_encode(openssl_encrypt($key, 'aes-256-cbc', $encryption_key, 0, substr($encryption_key, 0, 16)));
+}
+
+function decrypt_blesta_secret($encrypted_key) {
+    $encryption_key = wp_salt('auth');
+    return openssl_decrypt(base64_decode($encrypted_key), 'aes-256-cbc', $encryption_key, 0, substr($encryption_key, 0, 16));
+}
+
 function billing_panel_settings_page() {
     if (!current_user_can('manage_options')) {
         return;
@@ -49,7 +59,8 @@ function billing_panel_settings_page() {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['billing_panel_settings_nonce']) && wp_verify_nonce($_POST['billing_panel_settings_nonce'], 'billing_panel_settings')) {
         if (!empty($_POST['billing_panel_key'])) {
-            update_option('billing_panel_key', sanitize_text_field($_POST['billing_panel_key']), false);
+            $encrypted_key = encrypt_blesta_secret(sanitize_text_field($_POST['billing_panel_key']));
+            update_option('billing_panel_key', $encrypted_key, false);
         }
         update_option('billing_panel_redirect_url', esc_url_raw($_POST['billing_panel_redirect_url']));
         update_option('billing_panel_login_url', esc_url_raw($_POST['billing_panel_login_url']));
@@ -59,6 +70,9 @@ function billing_panel_settings_page() {
     }
 
     $key = get_option('billing_panel_key', '');
+    if (!empty($key)) {
+        $key = decrypt_blesta_secret($key);
+    }
     $redirect_url = get_option('billing_panel_redirect_url', site_url());
     $login_url = get_option('billing_panel_login_url', 'https://demo.tld/path_to_blesta/plugin/shared_login/');
     $user_identifier = get_option('billing_panel_user_identifier', 'username');
@@ -149,6 +163,9 @@ function redirect_to_billing_panel() {
     }
 
     $key = get_option('billing_panel_key', '');
+    if (!empty($key)) {
+        $key = decrypt_blesta_secret($key);
+    }
     $redirect_url = get_option('billing_panel_redirect_url', site_url());
     $login_url = get_option('billing_panel_login_url', 'https://demo.tld/path_to_blesta/plugin/shared_login/');
     $user_identifier = get_option('billing_panel_user_identifier', 'username');
@@ -179,6 +196,9 @@ function redirect_to_billing_panel() {
 add_shortcode('blesta_login', function () {
     if (is_user_logged_in()) {
         $key = get_option('billing_panel_key', '');
+        if (!empty($key)) {
+            $key = decrypt_blesta_secret($key);
+        }
         $redirect_url = get_option('billing_panel_redirect_url', site_url());
         $login_url = get_option('billing_panel_login_url', 'https://demo.tld/path_to_blesta/plugin/shared_login/');
         $user_identifier = get_option('billing_panel_user_identifier', 'username');
@@ -205,6 +225,9 @@ add_shortcode('blesta_login', function () {
 add_shortcode('blesta_login_raw', function () {
     if (is_user_logged_in()) {
         $key = get_option('billing_panel_key', '');
+        if (!empty($key)) {
+            $key = decrypt_blesta_secret($key);
+        }
         $redirect_url = get_option('billing_panel_redirect_url', site_url());
         $login_url = get_option('billing_panel_login_url', 'https://demo.tld/path_to_blesta/plugin/shared_login/');
         $user_identifier = get_option('billing_panel_user_identifier', 'username');
@@ -226,5 +249,4 @@ add_shortcode('blesta_login_raw', function () {
     } else {
         return '';
     }
-}
-);
+});
